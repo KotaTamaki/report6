@@ -8,8 +8,8 @@ public class Cpu{
     static int cardOrder=0;
     boolean ifcontinueForCpu=true;
     
-
-    public Cpu(){
+    
+    Cpu(){
         System.out.println("cpuと対決します");
     }
 
@@ -37,6 +37,7 @@ public class Cpu{
         
     }
 
+    
     public boolean ifend(){
         return ifcontinueForCpu;
     }

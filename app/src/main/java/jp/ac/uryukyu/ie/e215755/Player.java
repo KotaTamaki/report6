@@ -8,7 +8,7 @@ public class Player {
     private String name;
     boolean ifcontinue;
 
-    public Player(String name){
+    Player(String name){
         System.out.println(name+" が参加しました");
         this.name=name;
     }
@@ -46,8 +46,12 @@ public class Player {
         
     }
 
-    boolean ifContinue(List<String> list){
-        System.out.println("次の人に行くには <enter> 、もう一度引くには <1> を押してください");
+    public boolean ifend(){
+        return ifcontinue;
+    }
+
+    boolean ifContinue(List<String> list,String player){
+        System.out.println(player+"の番です。  カードを引くには <1> を押してください。次の人に行くのは<enter>");
         Scanner scan=new Scanner(System.in);
         String line=scan.nextLine();
         if(line.isEmpty()){
@@ -56,7 +60,6 @@ public class Player {
             ifcontinue = false;
         
         }else if(line.equals("1")){
-            
             ifcontinue = true;
 
         }

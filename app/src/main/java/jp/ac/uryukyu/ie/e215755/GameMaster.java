@@ -16,7 +16,7 @@ public class GameMaster {
             ));
         // カードの順番をランダムに入れ替える
         Collections.shuffle(list);
-        System.out.println(list);
+        // System.out.println(list);
         return list;
     }
 }
