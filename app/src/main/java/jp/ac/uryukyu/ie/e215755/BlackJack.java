@@ -18,9 +18,10 @@ public class BlackJack {
             Player no1 = new Player("Player1");
             do{
                 if(no1.ifContinue(cardsList)){
-                System.out.println(no1.gettingCard(cardsList)+"を取得しました");
-                no1.integerChanger(cardsList);
-                // cpu.gettingCard(cardsList);
+                    System.out.println(no1.gettingCard(cardsList)+"を取得しました");
+                    no1.integerChanger(cardsList);
+                    System.out.println("現在の合計は"+no1.countPlayersCards()+"です");
+                    
                     if(!no1.judge()){
                         System.out.println("あなたの負け");
                         break;
@@ -28,32 +29,18 @@ public class BlackJack {
                 }
 
                 if(cpu.ifContinueForCpu(cardsList)){
-                cpu.ifContinueForCpu(cardsList);
-                cpu.integerChanger(cardsList);
-                    if(!cpu.judge()){
-                        System.out.println("cpuの負け");
-                        break;
-                    }
+                    cpu.gettingCard(cardsList);
+                    cpu.integerChanger(cardsList);
+                        if(!cpu.judge()){
+                            System.out.println("cpuの負け");
+                            break;
+                        }
                 }
-            }while(no1.ifContinue(cardsList)== true || cpu.ifContinueForCpu(cardsList)== true);
-
-
+            }while(cpu.ifend()==true);
             System.out.println("player"+no1.playerCount);
             System.out.println("cpu"+cpu.cpuCount);
-            System.out.print(no1.playerCount+"対"+cpu.cpuCount);
-
-            
-            
-                
+            System.out.print(no1.playerCount+"対"+cpu.cpuCount);  
         }
-
-        // void finalGudger(Player playerCount,Cpu cpuCount){
-        //     if(playerCount>cpuCount){
-        //         System.out.print(playerCount+"対"+cpuCount);
-        //     }else{
-        //         System.out.print(playerCount+"対"+cpuCount);
-        //     }
-        // }
     
     }
     

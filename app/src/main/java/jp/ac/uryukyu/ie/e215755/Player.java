@@ -32,7 +32,6 @@ public class Player {
     String gettingCard(List<String> list){
         String num = list.get(cardOrder);
         cardOrder++;
-        System .out .println("kー土番号は"+cardOrder);
         return num;
     }
 
@@ -42,7 +41,7 @@ public class Player {
         return num;
     }
 
-    int countPlayersCards(){
+    public int countPlayersCards(){
         return playerCount;
         
     }
@@ -57,7 +56,7 @@ public class Player {
             ifcontinue = false;
         
         }else if(line.equals("1")){
-            System.out.println("現在の合計は"+countPlayersCards()+"です");
+            
             ifcontinue = true;
 
         }

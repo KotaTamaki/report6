@@ -6,7 +6,7 @@ public class Cpu{
     int cpuCount=0;
     boolean contenue=true;
     static int cardOrder=0;
-    boolean ifcontinueForCpu;
+    boolean ifcontinueForCpu=true;
     
 
     public Cpu(){
@@ -28,28 +28,31 @@ public class Cpu{
 
     int gettingCard(List<String> list){
         int num = Integer.parseInt(list.get(cardOrder).substring(1));//リストからカードを取りその番号だけを見る
-        list.remove(cardOrder);
         cardOrder++;
         return num;
     }
 
     int countPlayersCards(List<String> list){
-        cpuCount+=gettingCard(list);
         return cpuCount;
         
     }
 
+    public boolean ifend(){
+        return ifcontinueForCpu;
+    }
+
     boolean ifContinueForCpu(List<String> list){
-        
-        if(countPlayersCards(list)>14){
-            Random random = new Random();
-            int randomValue = random.nextInt(1);
-            if(randomValue==1){
-                ifcontinueForCpu = true;
-                
-            }else{
-                ifcontinueForCpu = false;
-                System.out.println("cpuがチェックしました");
+        if(ifcontinueForCpu==true){
+            if(countPlayersCards(list)>14){
+                Random random = new Random();
+                int randomValue = random.nextInt(1);
+                if(randomValue==1){
+                    ifcontinueForCpu = true;
+                    
+                }else{
+                    ifcontinueForCpu = false;
+                    System.out.println("cpuがチェックしました");
+                }
             }
         }
         return ifcontinueForCpu;

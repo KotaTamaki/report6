@@ -12,29 +12,6 @@ public class Main{
     }
     public static void main(String args[]){
 
-        
-        // int nun = createMember();
-
-
-        // String[] men ={"Player1","Player2","Player3","Player4"};
-
-        // if(nun==1){
-        //     Player no1 = new Player(men[0]);
-        //     Cpu cpu = new Cpu();
-
-        // }else if(nun==2){
-        //     Player no1 = new Player(men[0]);
-        //     Player no2 = new Player(men[1]);
-        // }else if(nun==3){
-        //     Player no1 = new Player(men[0]);
-        //     Player no2 = new Player(men[1]);
-        //     Player no3 = new Player(men[2]);
-        // }else if(nun==4){
-        //     Player no1 = new Player(men[0]);
-        //     Player no2 = new Player(men[1]);
-        //     Player no3 = new Player(men[2]);
-        //     Player no4 = new Player(men[3]);
-        // }
         BlackJack bl = new BlackJack();
         bl.gameStart(createMember());
 
