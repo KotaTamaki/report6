@@ -51,12 +51,10 @@ public class Player {
     }
 
     boolean ifContinue(List<String> list,String player){
-        System.out.println(player+"の番です。  カードを引くには <1> を押してください。次の人に行くのは<enter>");
+        System.out.println(player+"の番です。  カードを引くには <1> を押してください。パスなら<enter>を押してください");
         Scanner scan=new Scanner(System.in);
         String line=scan.nextLine();
         if(line.isEmpty()){
-            System.out.print("\033[H\033[2J");//コンソールをクリアするコマンド
-            line=scan.nextLine();
             ifcontinue = false;
         
         }else if(line.equals("1")){

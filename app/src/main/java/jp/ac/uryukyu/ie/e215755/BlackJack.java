@@ -99,7 +99,7 @@ public class BlackJack {
                         System.out.println("あなたの負け");
                         break;
                     }
-                    System.out.println("<enter>を押して次に人へ");
+                    System.out.println("<enter>を押して次の人へ");
                     Scanner scan=new Scanner(System.in);
                     String line=scan.nextLine();
                     if(line.isEmpty()){
@@ -116,7 +116,7 @@ public class BlackJack {
                         System.out.println("Player2の負け");
                         break;
                     }
-                    System.out.println("<enter>を押して次に人へ");
+                    System.out.println("<enter>を押して次の人へ");
                     Scanner scan1=new Scanner(System.in);
                     String line1=scan1.nextLine();
                     if(line1.isEmpty()){
@@ -133,7 +133,7 @@ public class BlackJack {
                         System.out.println("player3の負け");
                         break;
                     }
-                    System.out.println("<enter>を押して次に人へ");
+                    System.out.println("<enter>を押して次にのへ");
                     Scanner scan2=new Scanner(System.in);
                     String line2=scan2.nextLine();
                     if(line2.isEmpty()){
@@ -144,8 +144,86 @@ public class BlackJack {
             System.out.println("player1は"+no1.playerCount);
             System.out.println("player2は"+no2.playerCount);
             System.out.println("player3は"+no3.playerCount);
-             
+            
+        }else if(joinNumber==4){
+            Player no1 = new Player("Player1");
+            Player no2 = new Player("Player2");
+            Player no3 = new Player("Player3");
+            Player no4 = new Player("Player4");
+            do{
+                if(no1.ifContinue(cardsList,"player1")){
+                    System.out.println(no1.gettingCard(cardsList)+"を取得しました");
+                    no1.integerChanger(cardsList);
+                    System.out.println("現在の合計は"+no1.countPlayersCards()+"です");
+                    
+                    if(!no1.judge()){
+                        System.out.println("あなたの負け");
+                        break;
+                    }
+                    System.out.println("<enter>を押して次の人へ");
+                    Scanner scan=new Scanner(System.in);
+                    String line=scan.nextLine();
+                    if(line.isEmpty()){
+                        System.out.print("\033[H\033[2J");//コンソールをクリアするコマンド
+                    }
+                }
 
+                if(no2.ifContinue(cardsList,"player2")){
+                    System.out.println(no2.gettingCard(cardsList)+"を取得しました");
+                    no2.integerChanger(cardsList);
+                    System.out.println("現在の合計は"+no2.countPlayersCards()+"です");
+                    
+                    if(!no2.judge()){
+                        System.out.println("Player2の負け");
+                        break;
+                    }
+                    System.out.println("<enter>を押して次の人へ");
+                    Scanner scan1=new Scanner(System.in);
+                    String line1=scan1.nextLine();
+                    if(line1.isEmpty()){
+                        System.out.print("\033[H\033[2J");//コンソールをクリアするコマンド
+                    }
+                }
+
+                if(no3.ifContinue(cardsList,"player3")){
+                    System.out.println(no3.gettingCard(cardsList)+"を取得しました");
+                    no3.integerChanger(cardsList);
+                    System.out.println("現在の合計は"+no3.countPlayersCards()+"です");
+                    
+                    if(!no3.judge()){
+                        System.out.println("player3の負け");
+                        break;
+                    }
+                    System.out.println("<enter>を押して次の人へ");
+                    Scanner scan2=new Scanner(System.in);
+                    String line2=scan2.nextLine();
+                    if(line2.isEmpty()){
+                        System.out.print("\033[H\033[2J");//コンソールをクリアするコマンド
+                    }
+                }
+
+                if(no4.ifContinue(cardsList,"player4")){
+                    System.out.println(no4.gettingCard(cardsList)+"を取得しました");
+                    no4.integerChanger(cardsList);
+                    System.out.println("現在の合計は"+no4.countPlayersCards()+"です");
+                    
+                    if(!no4.judge()){
+                        System.out.println("player4の負け");
+                        break;
+                    }
+                    System.out.println("<enter>を押して次の人へ");
+                    Scanner scan3=new Scanner(System.in);
+                    String line3=scan3.nextLine();
+                    if(line3.isEmpty()){
+                        System.out.print("\033[H\033[2J");//コンソールをクリアするコマンド
+                    }
+                    
+                }
+            }while(no1.ifend()==true || no2.ifend()==true || no3.ifend()==true || no4.ifend()==true);
+            System.out.println("player1は"+no1.playerCount);
+            System.out.println("player2は"+no2.playerCount);
+            System.out.println("player3は"+no3.playerCount);
+            System.out.println("player4は"+no4.playerCount);
         }
     
     }
