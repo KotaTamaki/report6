@@ -1,9 +1,7 @@
 package jp.ac.uryukyu.ie.e215755;
-import java.lang.reflect.Array;
 import java.util.*;
 
 public class BlackJack {
-    int playerCount=0;
     static int cardOrder=0;
     boolean ifcontinue;
     boolean ifcontinueForCpu;
@@ -17,9 +15,8 @@ public class BlackJack {
                     }
     }
     
-    
+    //1人でプレーするためのメソッド
     public void gameStartWith1(){
-
         GameMaster gameMaster = new GameMaster();
         List<String> cardsList=gameMaster.preparatioOfCard();
             Cpu cpu = new Cpu();
@@ -43,6 +40,7 @@ public class BlackJack {
             System.out.println("cpuは"+cpu.cpuCount);
         }
 
+    //2人でプレーするためのメソッド
     public void gameStartWith2(){
         Player no1 = new Player("Player1");
         Player no2 = new Player("Player2");
@@ -69,6 +67,7 @@ public class BlackJack {
         System.out.println("player2は"+no2.playerCount);
         }
 
+    //3人でプレーするためのメソッド
     public void gameStartWith3(){
         Player no1 = new Player("Player1");
         Player no2 = new Player("Player2");
@@ -103,7 +102,8 @@ public class BlackJack {
         System.out.println("player2は"+no2.playerCount);
         System.out.println("player3は"+no3.playerCount);
     }  
-        
+
+    //4人でプレーするためのメソッド
     public void gameStartWith4(){      
         Player no1 = new Player("Player1");
         Player no2 = new Player("Player2");
@@ -148,33 +148,6 @@ public class BlackJack {
         System.out.println("player4は"+no4.playerCount);
     }
     
-    int finalJudger(int[] array){
-        
-        int max = array[0];
-        for (int i = 1; i < array.length; i++) {
-            int v = array[i];
-            if (v > max) {
-                max = v;
-            }
-}
-        return max;
-    }
-
-    int winner(int[] array){
-        int i=1;
-        for(int arr:array){
-            if(arr==finalJudger(array)){
-                i++;
-            }
-        }
-        return i;
-    }
-
-    
-        
-    
-    
-    
-
     
 }
+     

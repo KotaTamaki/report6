@@ -16,10 +16,6 @@ public class Player {
         return name;
     }
 
-    int getCount(){
-        return playerCount;
-    }
-
     boolean judge(){
         if(playerCount>21){
             return false;
@@ -28,13 +24,13 @@ public class Player {
         }
     }
 
-    String gettingCard(List<String> list){
+    public String gettingCard(List<String> list){
         String num = list.get(cardOrder);
         cardOrder++;
         return num;
     }
-
-    int integerChanger(List<String> list){
+    //取得したカードを数値に変換 ex)♥2->2
+    public int integerChanger(List<String> list){
         int num = Integer.parseInt(list.get(cardOrder-1).substring(1));//リストからカードを取りその番号だけを見る
         playerCount+=num;
         return num;
@@ -46,9 +42,13 @@ public class Player {
     }
 
     public boolean ifend(){
-        return ifcontinue;
+        return this.ifcontinue;
     }
-
+    /**
+     * 実際に実行されるアクションの処理
+     * @param list シャッフル済みのカードを用意している
+     * @param player プレイヤー名
+     */
     boolean ifContinue(List<String> list,String player){
         System.out.println(player+"の番です。  カードを引くには <1> を押してください。パスなら<enter>を押してください");
         Scanner scan=new Scanner(System.in);
@@ -61,12 +61,15 @@ public class Player {
                     integerChanger(list);
                     System.out.println("現在の合計は"+countPlayersCards()+"です");
             ifcontinue = true;
-
         }
         return ifcontinue;
         
     }
-
+    /**
+     * 実際に実行されるアクションの処理（cpuとの対戦で使用）
+     * @param list シャッフル済みのカードを用意している
+     * @param player プレイヤー名
+     */
     boolean ifContinueWithCpu(List<String> list,String player){
         System.out.println("カードを引くには <1> を押してください。<enter>でパス CPUの番になります");
         Scanner scan=new Scanner(System.in);

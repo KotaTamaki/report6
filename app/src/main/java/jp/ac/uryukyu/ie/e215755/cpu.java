@@ -8,7 +8,7 @@ public class Cpu{
     boolean ifcontinueForCpu=true;
     
     
-    Cpu(){
+    public Cpu(){
         System.out.println("cpuと対決します");
     }
 
@@ -25,7 +25,7 @@ public class Cpu{
     }
 
 
-    int gettingCard(List<String> list){
+    public int gettingCard(List<String> list){
         int num = Integer.parseInt(list.get(cardOrder).substring(1));//リストからカードを取りその番号だけを見る
         cardOrder++;
         return num;
