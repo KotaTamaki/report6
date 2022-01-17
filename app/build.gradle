@@ -33,3 +33,12 @@ tasks.named('test') {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
 }
+
+jar {
+    manifest {
+        attributes 'Manifest-Version': '1.0.0'
+        attributes 'Main-Class': 'basic.demo.App'
+    }
+    
+    version '1.0.0'
+}

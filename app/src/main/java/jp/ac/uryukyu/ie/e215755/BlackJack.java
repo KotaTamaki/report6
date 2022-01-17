@@ -39,7 +39,7 @@ public class BlackJack {
             System.out.println(" 21以下で合計が高い人が勝ち");
             System.out.println("playerは"+no1.playerCount);
             System.out.println("cpuは"+cpu.cpuCount);
-        }
+    }
 
     //2人でプレーするためのメソッド
     public void gameStartWith2(){
