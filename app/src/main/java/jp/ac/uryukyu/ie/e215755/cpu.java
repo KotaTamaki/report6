@@ -4,7 +4,6 @@ import java.util.*;
 public class Cpu{
     
     int cpuCount=0;
-    boolean contenue=true;
     static int cardOrder=0;
     boolean ifcontinueForCpu=true;
     
@@ -48,12 +47,19 @@ public class Cpu{
                 Random random = new Random();
                 int randomValue = random.nextInt(1);
                 if(randomValue==1){
+                    System.out.println("CPUも引きました");
+                    gettingCard(list);
+                    integerChanger(list);
                     ifcontinueForCpu = true;
                     
                 }else{
                     ifcontinueForCpu = false;
                     System.out.println("cpuがチェックしました");
                 }
+            }else{
+                System.out.println("CPUも引きました");
+                gettingCard(list);
+                integerChanger(list);
             }
         }
         return ifcontinueForCpu;

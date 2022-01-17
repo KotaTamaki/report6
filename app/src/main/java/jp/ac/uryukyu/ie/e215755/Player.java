@@ -3,7 +3,6 @@ import java.util.*;
 
 public class Player {
     int playerCount=0;
-    boolean contenue=true;
     static int cardOrder=0;
     private String name;
     boolean ifcontinue;
@@ -58,6 +57,27 @@ public class Player {
             ifcontinue = false;
         
         }else if(line.equals("1")){
+            System.out.println(gettingCard(list)+"を取得しました");
+                    integerChanger(list);
+                    System.out.println("現在の合計は"+countPlayersCards()+"です");
+            ifcontinue = true;
+
+        }
+        return ifcontinue;
+        
+    }
+
+    boolean ifContinueWithCpu(List<String> list,String player){
+        System.out.println("カードを引くには <1> を押してください。<enter>でパス CPUの番になります");
+        Scanner scan=new Scanner(System.in);
+        String line=scan.nextLine();
+        if(line.isEmpty()){
+            ifcontinue = false;
+        
+        }else if(line.equals("1")){
+            System.out.println(gettingCard(list)+"を取得しました");
+                    integerChanger(list);
+                    System.out.println("現在の合計は"+countPlayersCards()+"です");
             ifcontinue = true;
 
         }
