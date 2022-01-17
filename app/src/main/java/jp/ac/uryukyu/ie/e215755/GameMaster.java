@@ -5,7 +5,7 @@ public class GameMaster {
     static int cardOrder=0;
 
     
-
+    // カードの順番をランダムに入れ替え、カードを用意する
     public List<String> preparatioOfCard(){
         
         List<String> list = new ArrayList<>(Arrays.asList(
@@ -14,7 +14,7 @@ public class GameMaster {
             "♦1","♦2","♦3","♦4","♦5","♦6","♦7","♦8","♦9","♦10","♦11","♦12",
             "♣1","♣2","♣3","♣4","♣5","♣6","♣7","♣8","♣9","♣10","♣11","♣12"
             ));
-        // カードの順番をランダムに入れ替える
+        
         Collections.shuffle(list);
         return list;
     }
@@ -27,7 +27,6 @@ public class GameMaster {
             "♦1","♦2","♦3","♦4","♦5","♦6","♦7","♦8","♦9","♦10","♦11","♦12",
             "♣1","♣2","♣3","♣4","♣5","♣6","♣7","♣8","♣9","♣10","♣11","♣12"
             ));
-        // カードの順番をランダムに入れ替える
         return list;
     }
 }

@@ -6,7 +6,8 @@ public class BlackJack {
     boolean ifcontinue;
     boolean ifcontinueForCpu;
 
-    void nextPlayer(){
+    //次の人に行く前にコンソールをクリアしておく
+    public void nextPlayer(){
         System.out.println("<enter>を押して次の人へ");
                     Scanner scan=new Scanner(System.in);
                     String line=scan.nextLine();

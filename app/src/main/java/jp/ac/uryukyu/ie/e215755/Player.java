@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Player {
     int playerCount=0;
-    static int cardOrder=0;
+    public int cardOrder=0;
     private String name;
     boolean ifcontinue;
 
@@ -12,18 +12,18 @@ public class Player {
         this.name=name;
     }
 
-    String getName(){
+    public String getName(){
         return name;
     }
 
-    boolean judge(){
+    public boolean judge(){
         if(playerCount>21){
             return false;
         }else{
             return true;
         }
     }
-
+    //山札からカードを一枚とる
     public String gettingCard(List<String> list){
         String num = list.get(cardOrder);
         cardOrder++;
@@ -49,7 +49,7 @@ public class Player {
      * @param list シャッフル済みのカードを用意している
      * @param player プレイヤー名
      */
-    boolean ifContinue(List<String> list,String player){
+    public boolean ifContinue(List<String> list,String player){
         System.out.println(player+"の番です。  カードを引くには <1> を押してください。パスなら<enter>を押してください");
         Scanner scan=new Scanner(System.in);
         String line=scan.nextLine();
@@ -70,7 +70,7 @@ public class Player {
      * @param list シャッフル済みのカードを用意している
      * @param player プレイヤー名
      */
-    boolean ifContinueWithCpu(List<String> list,String player){
+    public boolean ifContinueWithCpu(List<String> list,String player){
         System.out.println("カードを引くには <1> を押してください。<enter>でパス CPUの番になります");
         Scanner scan=new Scanner(System.in);
         String line=scan.nextLine();
